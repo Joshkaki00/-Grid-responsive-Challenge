@@ -11,11 +11,12 @@ body, html {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #fff;
   background-size: cover;
   padding: 20px;
+  min-height: 100vh;
 }
 
 /* Desktop Layout (Default - 4 columns) */
@@ -39,6 +40,10 @@ body {
   grid-area: t; 
   text-align: center;
   color: #000;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .population { 
@@ -159,6 +164,7 @@ label {
   .dashboard {
     max-width: 600px;
     height: auto;
+    margin-top: 20px;
     /* 3-column tablet layout */
     grid-template-areas: 
       "t t t"     /* title spans all 3 columns */
@@ -167,7 +173,7 @@ label {
       "w w l"     /* welcome spans 2 cols, government 1 col */
       "g g g";    /* news spans all 3 columns */
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 200px 200px 200px 200px;
+    grid-template-rows: auto 200px 200px 200px 200px;
   }
   
   /* Adjust text alignment for better tablet layout */
@@ -194,6 +200,7 @@ label {
     max-width: 100%;
     height: auto;
     grid-gap: 10px;
+    margin-top: 10px;
     /* 2-column mobile layout */
     grid-template-areas: 
       "t t"       /* title spans both columns */
@@ -203,7 +210,7 @@ label {
       "l l"       /* government spans both columns */
       "g g";      /* news spans both columns */
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 200px 200px 200px 200px 300px;
+    grid-template-rows: auto 200px 200px 200px 200px 300px;
   }
   
   /* Mobile-specific adjustments */
